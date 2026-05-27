@@ -71,7 +71,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
                         LogMessage(L"Клієнт підключився (подія FD_ACCEPT)!");
                         WSAAsyncSelect(clientSocket, hwnd, WM_SOCKET, FD_READ | FD_CLOSE);
                         
-                        outFile.open("received_code.cpp", std::ios::binary);
+                        outFile.open("out_gui.cpp", std::ios::binary);
                         totalBytesReceived = 0;
                     }
                     break;
@@ -96,7 +96,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
                     clientSocket = INVALID_SOCKET;
 
                     LogMessage(L"=== ВАРІАНТ 3: Відкриття отриманого файлу *.cpp ===");
-                    ShellExecuteA(NULL, "open", "received_code.cpp", NULL, NULL, SW_SHOWNORMAL);
+                    ShellExecuteA(NULL, "open", "out_gui.cpp", NULL, NULL, SW_SHOWNORMAL);
                     break;
                 }
             }

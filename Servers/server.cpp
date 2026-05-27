@@ -60,7 +60,7 @@ int main() {
     ioctlsocket(clientSocket, FIONBIO, &iMode);
 
     // Відкриваємо файл для запису отриманих даних
-    ofstream outFile("received_file.dat", ios::binary);
+    ofstream outFile("out_console.cpp", ios::binary);
     char buffer[1024];
     int bytesReceived;
     int totalBytes = 0;
